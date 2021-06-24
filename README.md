@@ -5,5 +5,7 @@
     - ORM(Object Relational Mapping)
     - Puente entre objetos y base de datos
    
- ## PERSISTENCE.XML
+## PERSISTENCE.XML
 	- Corazon aplicacion jpa,configura las conexiones
+
+## Creando nuestra primera entidad
