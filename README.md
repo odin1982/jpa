@@ -4,4 +4,6 @@
     - Propuesta de java para persistir datos
     - ORM(Object Relational Mapping)
     - Puente entre objetos y base de datos
-    
+   
+ ## PERSISTENCE.XML
+	- Corazon aplicacion jpa,configura las conexiones
