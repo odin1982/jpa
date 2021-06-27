@@ -9,3 +9,8 @@
 	- Corazon aplicacion jpa,configura las conexiones
 
 ## Creando nuestra primera entidad
+
+
+## INSTRUCCIONES BD
+CREATE SCHEMA `orderapi` ;
+
