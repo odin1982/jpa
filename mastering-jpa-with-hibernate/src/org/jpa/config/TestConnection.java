@@ -15,11 +15,20 @@ public class TestConnection {
 		em.getTransaction().begin();
 		
 		Customer customer1 = new Customer();
-		customer1.setId(1L);
 		customer1.setFirstname("Odin");
 		customer1.setLastname("Araujo");
 		
+		Customer customer2 = new Customer();
+		customer2.setFirstname("Amaya");
+		customer2.setLastname("Araujo");
+		
+		Customer customer3 = new Customer();
+		customer3.setFirstname("Sandra");
+		customer3.setLastname("Hernandez");
+		
 		em.persist(customer1);
+		em.persist(customer2);
+		em.persist(customer3);
 		
 		em.getTransaction().commit();
 	}
