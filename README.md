@@ -8,8 +8,11 @@
 ## PERSISTENCE.XML
 	- Corazon aplicacion jpa,configura las conexiones
 
-## Creando nuestra primera entidad
-
+## ANOTACIONES
+@Entity - Declara la clase como una entidad
+@Table 	- Indica la tabla con la cual se va a mapear
+@Id 	- Indica que este atributo sera la llave primaria
+@GeneratedValue(strategy=GenerationType.IDENTITY) - Le indica la forma en que va a autoincrementar tu llave primaria
 
 ## INSTRUCCIONES BD
 CREATE SCHEMA `orderapi` ;
