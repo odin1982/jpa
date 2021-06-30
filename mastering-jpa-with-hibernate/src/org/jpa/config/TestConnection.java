@@ -9,7 +9,13 @@ import org.jpa.model.Customer;
 public class TestConnection {
 	public static void main(String[] args) {
 		//persistence-unit = mastering-jpa-with-hibernate
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("mastering-jpa-with-hibernate");
+		//MYSQL
+		//EntityManagerFactory factory = Persistence.createEntityManagerFactory("mastering-jpa-with-hibernate");
+		
+		//ORACLE 11G
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("oracle");
+		
+		
 		EntityManager em = factory.createEntityManager();
 		
 		em.getTransaction().begin();
