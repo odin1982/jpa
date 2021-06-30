@@ -15,15 +15,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name="customers")
 //ORACLE 11g
-@SequenceGenerator(name="customer_sec",sequenceName = "customer_sec",initialValue = 1,allocationSize = 1)
+//@SequenceGenerator(name="customer_sec",sequenceName = "customer_sec",initialValue = 1,allocationSize = 1)
 public class Customer {
 	
 	@Id
-	//MYSQL
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
 	//ORACLE 11g
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator ="customer_sec" )
+	//@GeneratedValue(strategy=GenerationType.SEQUENCE,generator ="customer_sec" )
 	private Long id;
 	private String firstname;
 	private String lastname;
@@ -45,6 +44,10 @@ public class Customer {
 	}
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
+	}
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + "]";
 	}
 	
 }

@@ -10,10 +10,10 @@ public class TestConnection {
 	public static void main(String[] args) {
 		//persistence-unit = mastering-jpa-with-hibernate
 		//MYSQL
-		//EntityManagerFactory factory = Persistence.createEntityManagerFactory("mastering-jpa-with-hibernate");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("mastering-jpa-with-hibernate");
 		
 		//ORACLE 11G
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("oracle");
+		//EntityManagerFactory factory = Persistence.createEntityManagerFactory("oracle");
 		
 		
 		EntityManager em = factory.createEntityManager();
@@ -35,6 +35,9 @@ public class TestConnection {
 		em.persist(customer1);
 		em.persist(customer2);
 		em.persist(customer3);
+		
+		Customer customer = em.find(Customer.class, 1L);
+		System.out.println("customer: " + customer);
 		
 		em.getTransaction().commit();
 	}
