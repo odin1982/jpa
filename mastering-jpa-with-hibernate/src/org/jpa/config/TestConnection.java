@@ -1,5 +1,7 @@
 package org.jpa.config;
 
+import java.math.BigDecimal;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -23,13 +25,14 @@ public class TestConnection {
 		Customer customer1 = new Customer();
 		customer1.setFirstname("Odin");
 		customer1.setLastname("Araujo");
+		customer1.setNumber(new BigDecimal(10000.00));
 		
 		Customer customer2 = new Customer();
 		customer2.setFirstname("Amaya");
 		customer2.setLastname("Araujo");
 		
 		Customer customer3 = new Customer();
-		customer3.setFirstname("Sandra");
+		customer3.setFirstname("Sandr");
 		customer3.setLastname("Hernandez");
 		
 		em.persist(customer1);
