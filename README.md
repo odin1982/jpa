@@ -13,6 +13,7 @@
 - @Table 	- Indica la tabla con la cual se va a mapear
 - @Id 	- Indica que este atributo sera la llave primaria
 - @GeneratedValue(strategy=GenerationType.IDENTITY) - Le indica la forma en que va a autoincrementar tu llave primaria
+- @Temporal - We use this annotation  when we use Date or Calendar with version lowers than Java 8.
 
 ## INSTRUCCIONES BD
 CREATE SCHEMA `orderapi` ;
