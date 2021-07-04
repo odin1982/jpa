@@ -1,6 +1,7 @@
 package org.jpa.config;
 
-import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Calendar;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -25,15 +26,24 @@ public class TestConnection {
 		Customer customer1 = new Customer();
 		customer1.setFirstname("Odin");
 		customer1.setLastname("Araujo");
-		customer1.setNumber(new BigDecimal(10000.00));
+		//APUNTES - Calendar.getInstance() - Get today
+		customer1.setBirthdate(Calendar.getInstance());
+		customer1.setRegDate(Calendar.getInstance());
+		customer1.setRegDateLocalDate(LocalDate.now());
 		
 		Customer customer2 = new Customer();
 		customer2.setFirstname("Amaya");
 		customer2.setLastname("Araujo");
+		customer2.setBirthdate(Calendar.getInstance());
+		customer2.setRegDate(Calendar.getInstance());
+		customer2.setRegDateLocalDate(LocalDate.now());
 		
 		Customer customer3 = new Customer();
 		customer3.setFirstname("Sandr");
 		customer3.setLastname("Hernandez");
+		customer3.setBirthdate(Calendar.getInstance());
+		customer3.setRegDate(Calendar.getInstance());
+		customer3.setRegDateLocalDate(LocalDate.now());
 		
 		em.persist(customer1);
 		em.persist(customer2);
