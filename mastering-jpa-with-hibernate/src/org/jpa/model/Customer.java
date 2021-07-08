@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import org.jpa.enums.CustomerStatus;
 
@@ -75,6 +76,9 @@ public class Customer {
 	@Column(name="status",nullable=false)
 	private CustomerStatus status;
 	
+	@Transient
+	private String fullName;
+	
 	public Long getId() {
 		return id;
 	}
@@ -86,12 +90,14 @@ public class Customer {
 	}
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
+		this.setFullName(firstname + " " + lastname);
 	}
 	public String getLastname() {
 		return lastname;
 	}
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
+		this.setFullName(firstname + " " + lastname);
 	}
 	
 	public Calendar getBirthdate() {
@@ -139,6 +145,13 @@ public class Customer {
 		this.status = status;
 	}
 	
+	public String getFullName() {
+		return fullName;
+	}
+	
+	private void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", birthdate=" + birthdate
