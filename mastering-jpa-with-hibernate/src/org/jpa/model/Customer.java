@@ -67,7 +67,11 @@ public class Customer {
 	
 	//APUNTES-Existen dos formas de declarar un enum en JPA con @Enumerated
 	//APUNTES-EnumType.ORDINAL [Graba la posicion del enum]
-	@Enumerated(EnumType.ORDINAL)
+	//APUNTES-EnumType.STRING [Graba la cadena del enum]
+	//[Se recomienda usar STRING,ya que con ORDINAL si agregan un nuevo enum arriba de los ya exitentes, los valores ya no seran los mismo, la integridad se rompe]
+	//@Enumerated(EnumType.ORDINAL)
+	
+	@Enumerated(EnumType.STRING)
 	@Column(name="status",nullable=false)
 	private CustomerStatus status;
 	
