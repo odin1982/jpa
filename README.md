@@ -14,6 +14,11 @@
 - @Id 	- Indica que este atributo sera la llave primaria
 - @GeneratedValue(strategy=GenerationType.IDENTITY) - Le indica la forma en que va a autoincrementar tu llave primaria
 - @Temporal - We use this annotation  when we use Date or Calendar with version lowers than Java 8.
+- @Enumerated - Persist enums
+- @Transient - Unidades que no deben ser persistidas en la BD
+
+## Serializable
+    Es cuando un objeto viaje a traves de la red se convierte en 0 y 1's y del otro lado se vuelve a deserializar
 
 ## INSTRUCCIONES BD
 CREATE SCHEMA `orderapi` ;
