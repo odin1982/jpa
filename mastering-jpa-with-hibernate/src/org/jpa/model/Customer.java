@@ -6,12 +6,16 @@ import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.jpa.enums.CustomerStatus;
 
 //APUNTES - @Entity - Declara la clase como una entidad
 //APUNTES - @Table 	- Indica la tabla con la cual se va a mapear
@@ -61,7 +65,11 @@ public class Customer {
 	@Column(name="fecha_registro_another_way_localdate",nullable = false, updatable = false)
 	private LocalDateTime regDateAnotherWayLocalDate = LocalDateTime.now();
 	
-	
+	//APUNTES-Existen dos formas de declarar un enum en JPA con @Enumerated
+	//APUNTES-EnumType.ORDINAL [Graba la posicion del enum]
+	@Enumerated(EnumType.ORDINAL)
+	@Column(name="status",nullable=false)
+	private CustomerStatus status;
 	
 	public Long getId() {
 		return id;
@@ -120,11 +128,20 @@ public class Customer {
 		this.regDateAnotherWayLocalDate = regDateAnotherWayLocalDate;
 	}
 	
+	public CustomerStatus getStatus() {
+		return status;
+	}
+	public void setStatus(CustomerStatus status) {
+		this.status = status;
+	}
+	
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", birthdate=" + birthdate
 				+ ", regDate=" + regDate + ", regDateAnotherWay=" + regDateAnotherWay + ", regDateLocalDate="
-				+ regDateLocalDate + ", regDateAnotherWayLocalDate=" + regDateAnotherWayLocalDate + "]";
+				+ regDateLocalDate + ", regDateAnotherWayLocalDate=" + regDateAnotherWayLocalDate + ", status=" + status
+				+ "]";
 	}
+	
 	
 }
