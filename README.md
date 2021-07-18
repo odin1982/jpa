@@ -25,7 +25,8 @@
     - Es leido por JPA de forma predeterminada en la carpeta META-INF
 
 ### Persistence Unit
-    Es donde configuramos como JPA se va a conectar a una base de datos
+    Es donde configuramos como JPA se va a conectar a una base de datos.
+    Administra coneccion , entidades, cache, como es creado el esquema.
 
 ## INSTRUCCIONES BD
 CREATE SCHEMA `orderapi` ;
