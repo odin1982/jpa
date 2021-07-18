@@ -20,6 +20,13 @@
 ## Serializable
     Es cuando un objeto viaje a traves de la red se convierte en 0 y 1's y del otro lado se vuelve a deserializar
 
+## Persistence.xml
+    - realizamos configuraciones para conectarnos a la BD
+    - Es leido por JPA de forma predeterminada en la carpeta META-INF
+
+### Persistence Unit
+    Es donde configuramos como JPA se va a conectar a una base de datos
+
 ## INSTRUCCIONES BD
 CREATE SCHEMA `orderapi` ;
 
