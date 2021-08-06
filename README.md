@@ -28,6 +28,35 @@
     Es donde configuramos como JPA se va a conectar a una base de datos.
     Administra coneccion , entidades, cache, como es creado el esquema.
 
+#### transaction-type
+    Como queremos gestionar las transacciones.
+    - JTA: El servidor de aplicaciones se encarga de administrar las transacciones.
+    - RESOURCE_LOCAL: Nosotros nos encargamos de abrir o cerrar las transacciones.
+
+    <persistence-unit name="mastering-jpa-with-hibernate" transaction-type="RESOURCE_LOCAL">
+		<class>org.jpa.model.Customer</class>
+		<properties>
+            <!-- driver de la base de datos que estamos usando -->
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<!-- usuario de la BD-->
+            <property name="javax.persistence.jdbc.user" value="root"/>
+			<!-- contraseña de la BD -->
+            <property name="javax.persistence.jdbc.password" value="barcelona8"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/orderapi?serverTimezone=UTC"/>
+             <!-- dialecto: como hibernate convierte los objetos en SQL nativo-->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <!-- Nos indica si queremos ver las instrucciones de SQL que se van ejecutando -->
+            <property name="hibernate.show_sql" value="true"/>
+		</properties>
+	</persistence-unit> 
+
+## PATRON FACTORY
+    Crear clases sin conocer la implementación exacta.
+
+## AVANCE
+Persistir una entidad
+
 ## INSTRUCCIONES BD
 CREATE SCHEMA `orderapi` ;
 
