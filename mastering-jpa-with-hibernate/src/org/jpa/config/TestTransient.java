@@ -1,8 +1,5 @@
 package org.jpa.config;
 
-import java.time.LocalDate;
-import java.util.Calendar;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -27,26 +24,14 @@ public class TestTransient {
 		Customer customer1 = new Customer();
 		customer1.setFirstname("Odin");
 		customer1.setLastname("Araujo");
-		//APUNTES - Calendar.getInstance() - Get today
-		customer1.setBirthdate(Calendar.getInstance());
-		customer1.setRegDate(Calendar.getInstance());
-		customer1.setRegDateLocalDate(LocalDate.now());
-		customer1.setStatus(CustomerStatus.ACTIVE);
 		
 		Customer customer2 = new Customer();
 		customer2.setFirstname("Amaya");
 		customer2.setLastname("Araujo");
-		customer2.setBirthdate(Calendar.getInstance());
-		customer2.setRegDate(Calendar.getInstance());
-		customer2.setRegDateLocalDate(LocalDate.now());
-		customer2.setStatus(CustomerStatus.INACTIVE);
 		
 		Customer customer3 = new Customer();
 		customer3.setFirstname("Sandra");
 		customer3.setLastname("Hernandez");
-		customer3.setBirthdate(Calendar.getInstance());
-		customer3.setRegDate(Calendar.getInstance());
-		customer3.setRegDateLocalDate(LocalDate.now());
 		customer3.setStatus(CustomerStatus.ACTIVE);
 		
 		em.persist(customer1);

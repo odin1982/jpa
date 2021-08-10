@@ -1,19 +1,21 @@
 package org.jpa.config;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.jpa.enums.CustomerStatus;
 import org.jpa.model.Customer;
 
 public class TestConnection {
 	public static void main(String[] args) {
 		//persistence-unit = mastering-jpa-with-hibernate
 		//MYSQL
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("mastering-jpa-with-hibernate");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("mysql");
 		
 		//ORACLE 11G
 		//EntityManagerFactory factory = Persistence.createEntityManagerFactory("oracle");
@@ -27,23 +29,23 @@ public class TestConnection {
 		customer1.setFirstname("Odin");
 		customer1.setLastname("Araujo");
 		//APUNTES - Calendar.getInstance() - Get today
-		customer1.setBirthdate(Calendar.getInstance());
-		customer1.setRegDate(Calendar.getInstance());
-		customer1.setRegDateLocalDate(LocalDate.now());
+		customer1.setBirthdate(LocalDate.now());
+		customer1.setRegDate(LocalDateTime.now());
+		customer1.setStatus(CustomerStatus.ACTIVE);
 		
 		Customer customer2 = new Customer();
 		customer2.setFirstname("Amaya");
 		customer2.setLastname("Araujo");
-		customer2.setBirthdate(Calendar.getInstance());
-		customer2.setRegDate(Calendar.getInstance());
-		customer2.setRegDateLocalDate(LocalDate.now());
+		customer2.setBirthdate(LocalDate.now());
+		customer2.setRegDate(LocalDateTime.now());
+		customer2.setStatus(CustomerStatus.ACTIVE);
 		
 		Customer customer3 = new Customer();
 		customer3.setFirstname("Sandr");
 		customer3.setLastname("Hernandez");
-		customer3.setBirthdate(Calendar.getInstance());
-		customer3.setRegDate(Calendar.getInstance());
-		customer3.setRegDateLocalDate(LocalDate.now());
+		customer3.setBirthdate(LocalDate.now());
+		customer3.setRegDate(LocalDateTime.now());
+		customer3.setStatus(CustomerStatus.INACTIVE);
 		
 		em.persist(customer1);
 		em.persist(customer2);

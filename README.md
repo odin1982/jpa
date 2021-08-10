@@ -32,7 +32,8 @@
     Como queremos gestionar las transacciones.
     - JTA: El servidor de aplicaciones se encarga de administrar las transacciones.
     - RESOURCE_LOCAL: Nosotros nos encargamos de abrir o cerrar las transacciones.
-
+ 
+ ```
     <persistence-unit name="mastering-jpa-with-hibernate" transaction-type="RESOURCE_LOCAL">
 		<class>org.jpa.model.Customer</class>
 		<properties>
@@ -49,14 +50,25 @@
             <!-- Nos indica si queremos ver las instrucciones de SQL que se van ejecutando -->
             <property name="hibernate.show_sql" value="true"/>
 		</properties>
-	</persistence-unit> 
+	</persistence-unit>
+
+``` 
 
 ## PATRON FACTORY
     Crear clases sin conocer la implementación exacta.
+
+
+## persist
+Sirve para insertar como para hacer update
+
+```
+em.persist(c1);
+```
 
 ## AVANCE
 Persistir una entidad
 
 ## INSTRUCCIONES BD
 CREATE SCHEMA `orderapi` ;
+
 

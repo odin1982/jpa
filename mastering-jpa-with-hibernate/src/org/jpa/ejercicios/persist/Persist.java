@@ -1,4 +1,4 @@
-package org.jpa.persist;
+package org.jpa.ejercicios.persist;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
