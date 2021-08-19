@@ -100,11 +100,10 @@ public class Customer {
 	private void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
-	
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", birthdate=" + birthdate
-				+ ", regDate=" + regDate + ", status=" + status + "]";
+				+ ", regDate=" + regDate + ", status=" + status + ", fullName=" + fullName + "]";
 	}
-
+	
 }
