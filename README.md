@@ -105,6 +105,9 @@ em.getTransaction().commit();
 
 ```
 
+## em.createQuery(String)
+No recibe queries nativos usa JPQL
+
 ## AVANCE
 Persistir una entidad
 
