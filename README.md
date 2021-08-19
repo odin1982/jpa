@@ -108,6 +108,41 @@ em.getTransaction().commit();
 ## em.createQuery(String)
 No recibe queries nativos usa JPQL
 
+
+## Relaciones y cardinalidad
+
+### ManyToOne
+
+```
+@Entity
+@Table(name="orders")
+public class Order {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	private Long id;
+	
+	@ManyToOne
+	@JoinColumn(name="fk_customer", nullable=false, updatable=false)
+	private Customer customer;
+
+
+@Entity
+@Table(name="customers")
+public class Customer {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	private Long id;
+```
+
+
+
+
+
+
 ## AVANCE
 Persistir una entidad
 
