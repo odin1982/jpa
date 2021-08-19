@@ -65,6 +65,46 @@ Sirve para insertar como para hacer update
 em.persist(c1);
 ```
 
+## update
+
+```
+Customer talavera = em.find(Customer.class, 1L);
+talavera.setFirstname("Talavera");
+talavera.setLastname("Juarez");
+em.persist(talavera);
+
+Customer sandra = em.find(Customer.class, 4L);
+sandra.setFirstname("Sandra");
+em.persist(sandra);
+```
+
+## merge
+Metodo que le indica a JPA que empiece a administrar la entidad, por lo generarl se usa cuando una entidad es creada po un new() y revisa si realmente existe
+
+```
+em.getTransaction().begin();		
+    Customer c1 = new Customer();
+    c1.setId(1L);
+    c1.setFirstname("Giovanni");
+    c1.setLastname("dos Santos");
+    c1.setBirthdate(LocalDate.of(1992,Month.APRIL,25));
+    c1.setStatus(CustomerStatus.ACTIVE);
+    c1.setRegDate(LocalDateTime.now());
+
+    em.merge(c1);
+em.getTransaction().commit();
+```
+
+## delete
+
+```
+em.getTransaction().begin();
+    Customer customer = em.find(Customer.class, 6L);
+    em.remove(customer);
+em.getTransaction().commit();
+
+```
+
 ## AVANCE
 Persistir una entidad
 
